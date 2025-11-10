@@ -1,0 +1,26 @@
+{
+  "fast_10_turns": {
+    "description": "Fast convergence (approx. 10 turns)",
+    "mu_0": -2.0,
+    "k_decay": 0.3,
+    "sigma_sq_initial": 0.2,
+    "sigma_sq_final": 2.5,
+    "r_decay": 0.4
+  },
+  "medium_20_turns": {
+    "description": "Medium convergence (approx. 20 turns)",
+    "mu_0": -2.0,
+    "k_decay": 0.15,
+    "sigma_sq_initial": 0.2,
+    "sigma_sq_final": 2.5,
+    "r_decay": 0.2
+  },
+  "slow_40_turns": {
+    "description": "Slow convergence (approx. 40 turns)",
+    "mu_0": -2.0,
+    "k_decay": 0.075,
+    "sigma_sq_initial": 0.2,
+    "sigma_sq_final": 2.5,
+    "r_decay": 0.1
+  }
+}

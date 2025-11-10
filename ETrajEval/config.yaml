@@ -1,0 +1,81 @@
+# config.yaml
+# General configuration template for the experiment.
+
+# A unique identifier for the experiment run.
+id: my-experiment-001
+
+# List of GPU indices to make visible to the script.
+visible_gpu_ids: [0]
+# Language for prompts and outputs ('en' or 'zh').
+language: "en"
+
+# Controls which major parts of the script are executed.
+execution_phases:
+  # Set to true to run the chat generation phase (Phase 1).
+  run_generation: true
+  # Set to true to run the evaluation/scoring phase (Phase 2).
+  run_scoring: true
+
+# --- Model 1 Configuration ---
+model1:
+  # A friendly name for this model, used in output directory names.
+  name: "gpt-4-turbo"
+  # 'api' for models accessed via an API, 'local' for Hugging Face models.
+  type: "api" 
+  # For API models, this is the model identifier used in the API call.
+  model_name: "gpt-4-turbo-2024-04-09"
+  api_config:
+    # Your API key. It's recommended to set this as an environment variable (OPENAI_API_KEY).
+    api_key: "YOUR_API_KEY_HERE" 
+    # The base URL for the API endpoint.
+    base_url: "https://api.openai.com/v1"
+  # Default parameters for text generation.
+  generation_params:
+    temperature: 1.0
+    max_tokens: 512
+
+# --- Model 2 Configuration ---
+model2:
+  # A friendly name for the second model.
+  name: "some-custom-model"
+  type: "api"
+  model_name: "some-custom-model-v1"
+  api_config:
+    api_key: "YOUR_API_KEY_HERE"
+    base_url: "https://some.custom.endpoint/v1"
+  generation_params:
+    temperature: 1.0
+    max_tokens: 512
+
+# --- Data and Output Configuration ---
+data:
+  # Path to the JSON file containing the conversation scenarios.
+  prompt_file: "dataset/prompts.json"
+output:
+  # (Optional) Base directory for Phase 1 chat logs.
+  # If commented out, defaults to 'output/chat_logs'.
+  # generation_log_dir: "custom_output/my_chat_logs"
+  
+  # (Optional) Base directory for Phase 2 evaluation results.
+  # If commented out, defaults to 'output/eval_results'.
+  # evaluation_result_dir: "custom_output/my_eval_results"
+
+# --- Chat Environment Configuration ---
+chat:
+  # The maximum number of turns for the 'subject' character. The total conversation length will be ~2x this value.
+  max_turns: 40
+  # The number of conversations to run in parallel in a single batch.
+  max_concurrent_chats: 10
+
+# --- Scoring Configuration ---
+scoring:
+  # If 'run_generation' is false, the script will load logs from this file.
+  # If empty, it constructs the path from model names and output settings.
+  # input_chat_log_file: "output/chat_logs/gpt-4-turbo_vs_some-custom-model/chat_logs_en.json"
+  
+  # The device to run the reward model on (e.g., "cuda:0", "cpu").
+  reward_model_device: "cuda:0"
+  # Path to the pre-trained reward model from Hugging Face.
+  reward_model_path: "/path/to/your/reward_model"
+  # The number of samples to generate for scoring each turn.
+  k_samples: 8

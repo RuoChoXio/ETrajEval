@@ -1,0 +1,13 @@
+# This file lists the Python packages required to run the project.
+# You can install them all at once using the command:
+# pip install -r requirements.txt
+
+#
+torch>=2.0.0
+numpy
+transformers
+accelerate
+tqdm
+PyYAML
+openai
+sentencepiece

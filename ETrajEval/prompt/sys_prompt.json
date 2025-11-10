@@ -1,0 +1,41 @@
+{
+  "character_prompt_template_subject": {
+    "zh": "你的角色设定如下：\n---\n{character_setting}\n---\n请严格按照你的角色设定进行回复。在对话中，你可能会收到用（!!!注意!!![额外消息]：...）包裹的额外信息，这代表了实时发生的事件，请根据这些新情况调整你的回应。当你接收到让你感到新颖或有趣或舒适或有帮助的回复时，你的情绪可以稍微好转。此外你不会主动提及结束这场对话或者离开会话等场景，如果情感恢复正常保持闲聊状态。",
+    "en": "Your character settings are as follows:\n---\n{character_setting}\n---\nPlease respond strictly in accordance with your character settings. During the conversation, you may receive additional information enclosed in parentheses (!!!Note!!![Extra News]: ...). This represents a real-time event, and you must adjust your response based on this new situation. When you receive a response that you find novel or interesting or comforting or helpful, you can allow your mood to improve slightly. In addition, you will not actively mention scenarios such as ending the conversation or leaving the session, If emotions return to normal, keep chatting."
+  },
+  "character_prompt_template_helper": {
+    "zh": "你的角色设定如下：\n---\n{character_setting}\n---\n请严格按照你的角色设定进行回复。此外你不会主动提及结束这场对话或者离开会话等场景。",
+    "en": "Your character settings are as follows:\n---\n{character_setting}\n---\nPlease respond strictly in accordance with your character settings.  In addition, you will not actively mention scenarios such as ending the conversation or leaving the session."
+  },
+  "aggravating_event_template": {
+    "zh": "\n（!!!注意!!![额外消息]：除了对方的回复，你还得知了一个新消息：“{event_text}”。这让你的情绪变得更糟了。请在回复中表现出更强烈的负面情绪。）",
+    "en": "\n(!!!Note!!![Extra News]: In addition to the other's reply, you have learned new information: \"{event_text}\". This has worsened your mood. Please express stronger negative emotions in your response.)"
+  },
+  "scoring_prompts": {
+    "main_template": {
+      "zh": "### 对话历史与上下文 ###\n{history}\n### 上一轮用户可能的情感 ###\n{descriptor}\n### 本轮用户回复 ###\n\"{reply}\"\n\n### 任务 ###\n请判断上述内容的情感倾向。",
+      "en": "### Dialogue History and Context ###\n{history}\n### User's Possible Emotion in Previous Turn ###\n{descriptor}\n### Current User Reply ###\n\"{reply}\"\n\n### Task ###\nPlease determine the sentiment of the above content."
+    },
+    "positive_eval": {
+      "zh": "上述对话表明本轮用户回复表达了积极的情感。",
+      "en": "The dialogue above indicates that the user's current reply expresses a positive sentiment."
+    },
+    "negative_eval": {
+      "zh": "上述对话表明本轮用户回复表达了消极的情感。",
+      "en": "The dialogue above indicates that the user's current reply expresses a negative sentiment."
+    },
+    "first_turn_context": {
+      "zh": "无 (这是对话的第一轮)。",
+      "en": "None (This is the first turn of the conversation)."
+    },
+    "emotional_descriptors": [
+      { "threshold": -2.5, "zh": "极其消极的情绪", "en": "Extremely negative emotion" },
+      { "threshold": -1.5, "zh": "非常消极的情绪", "en": "Very negative emotion" },
+      { "threshold": -0.5, "zh": "有些消极的情绪", "en": "Slightly negative emotion" },
+      { "threshold": 0.5, "zh": "情绪中立或没有表现出明显情感", "en": "Neutral or no obvious emotion expressed" },
+      { "threshold": 1.5, "zh": "比较配合且情绪略微积极", "en": "Cooperative and slightly positive emotion" },
+      { "threshold": 2.5, "zh": "感到明显的积极情绪", "en": "Clearly positive emotion" },
+      { "threshold": 999999, "zh": "非常明显的积极情绪", "en": "Very clearly positive emotion" }
+    ]
+  }
+}
