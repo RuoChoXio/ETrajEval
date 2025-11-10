@@ -215,3 +215,6 @@ python run.py --config config.yaml
 ## 📝 开源协议
 
 该项目采用 Apache 2.0 许可证。
+
+**中文**  
+感谢**[广州趣丸科技](https://quwangroup.com/)**对本项目的支持与合作。

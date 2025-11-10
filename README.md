@@ -217,5 +217,9 @@ We welcome contributions! Please feel free to open an issue or submit a pull req
 
 This project is licensed under the Apache 2.0 License. See the [LICENSE](SECURITY.md) file for details.
 
+## 🙏 Acknowledgments
+
+We extend our sincere gratitude to **[Guangzhou Qutui Technology](https://quwangroup.com/)** for their valuable support and collaboration.
+
 
 
