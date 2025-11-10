@@ -41,13 +41,21 @@ Traditional evaluation methods for emotional support often rely on short, static
 
 To overcome this, **ETrajEval** shifts from static, model-centric evaluation to **dynamic, user-centered trajectory analysis**. We simulate realistic, multi-turn role-playing scenarios where a user's emotional state is influenced by the conversation and by external "disturbance events." Our framework evaluates a model's ability not just to produce a single empathetic response, but to consistently **improve and stabilize a user's emotional well-being over the entire course of an interaction.**
 
-<br>
+
 
 <p align="center">
   <img src="README/asserts/ETrajEval_main.png" width="800" alt="Framework Overview">
   <br>
   <em>Figure 1: Overview of the ETrajEval framework, including dynamic interaction, causal emotion estimation, and trajectory-based metrics.</em>
 </p>
+
+## 🙂 Language
+
+<center> 
+
+English | [Chinese](README/README_ZH.md)  
+
+</center>
 
 ## 🌟 Key Features
 
@@ -207,7 +215,7 @@ We welcome contributions! Please feel free to open an issue or submit a pull req
 
 ## 📝 License
 
-This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License. See the [LICENSE](SECURITY.md) file for details.
 
 
 
