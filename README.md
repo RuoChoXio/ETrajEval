@@ -196,7 +196,7 @@ Easily integrate new models by adding a definition in `config.yaml`:
       generation_params: { ... }
     ```
 
-## 📄 Citation
+<!-- ## 📄 Citation
 
 If you use ETrajEval in your research, please cite our paper:
 
@@ -207,7 +207,7 @@ If you use ETrajEval in your research, please cite our paper:
   journal={Details to be updated upon publication},
   year={2025}
 }
-```
+``` -->
 
 ## 🤝 Contributing
 
