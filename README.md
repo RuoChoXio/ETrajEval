@@ -219,7 +219,7 @@ This project is licensed under the Apache 2.0 License. See the [LICENSE](SECURIT
 
 ## 🙏 Acknowledgments
 
-We extend our sincere gratitude to **[Guangzhou Qutui Technology](https://quwangroup.com/)** for their valuable support and collaboration.
+We extend our sincere gratitude to **[Guangzhou Quwan Technology](https://quwangroup.com/)** for their valuable support and collaboration.
 
 
 
