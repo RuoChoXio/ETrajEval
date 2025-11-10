@@ -207,7 +207,7 @@ We welcome contributions! Please feel free to open an issue or submit a pull req
 
 ## 📝 License
 
-This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License. See the [LICENSE](SECURITY.md) file for details.
 
 
 
