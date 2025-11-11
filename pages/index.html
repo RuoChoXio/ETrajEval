@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="We propose a dynamic evaluation framework for emotional support in LLMs, simulating user interactions with emotional disruptions, and assessing support capabilities via Markov trajectory modeling and causal inference.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="Emotional Intelligence, (Large) Language Models, Emotional Support, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Zhouxing Tan, Ruochong Xiong, Yulong Wan, JinLong Ma, Hanlin Xue, Qichun Deng, Junfei Liu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Peking University">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="We propose a dynamic evaluation framework for emotional support in LLMs, simulating user interactions with emotional disruptions, and assessing support capabilities via Markov trajectory modeling and causal inference.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://RuoChoXio.github.io/ETrajEval/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="static/images/logo.jpg">
+  <meta property="og:image:width" content="1968">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models - Research Preview">
+  <meta property="article:published_time" content="2025-11-08T00:00:00.000Z">
+  <meta property="article:author" content="Zhouxing Tan">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Emotional Intelligence">
+  <meta property="article:tag" content="(Large) Language Models">
+
+  <!-- Twitter -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <!-- <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE"> -->
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <!-- <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE"> -->
+  <!-- TODO: Same as paper title above -->
+  <!-- <meta name="twitter:title" content="PAPER_TITLE"> -->
+  <!-- TODO: Same as description above -->
+  <!-- <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS"> -->
+  <!-- TODO: Same as social preview image above -->
+  <!-- <meta name="twitter:image" content="https://RuoChoXio.github.io/ETrajEval/static/images/social_preview.png"> -->
+  <!-- <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview"> -->
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models">
+  <meta name="citation_author" content="Tan, Zhouxing">
+  <meta name="citation_author" content="Xiong, Ruochong">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="The 40th Annual AAAI Conference on Artificial Intelligence">
+  <meta name="citation_pdf_url" content="https://RuoChoXio.github.io/ETrajEval/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/snake.ico">
+  <link rel="apple-touch-icon" href="static/images/snake.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> -->
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models",
+    "description": "We propose a dynamic evaluation framework for emotional support in LLMs, simulating user interactions with emotional disruptions, and assessing support capabilities via Markov trajectory modeling and causal inference.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Zhouxing Tan",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Peking University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Ruochong Xiong",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Peking University"
+        }
+      }
+    ],
+    "datePublished": "2025-11-08",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The 40th Annual AAAI Conference on Artificial Intelligence"
+    },
+    "url": "https://RuoChoXio.github.io/ETrajEval/",
+    "image": "https://RuoChoXio.github.io/ETrajEval/static/images/social_preview.png",
+    "keywords": ["Emotional Intelligence", "(Large) Language Models", "Emotional Support", "machine learning", "AI"],
+    "abstract": "Emotional support is a core capability in human-AI interaction, with applications including psychological counseling, role play, and companionship. However, existing evaluations of large language models (LLMs) often rely on short, static dialogues and fail to capture the dynamic and long-term nature of emotional support. To overcome this limitation, we shift from snapshot-based evaluation to trajectory-based assessment, adopting a user-centered perspective that evaluates models based on their ability to improve and stabilize user emotional states over time. Our framework constructs a large-scale benchmark consisting of 328 emotional contexts and 1,152 disturbance events, simulating realistic emotional shifts under evolving dialogue scenarios. To encourage psychologically grounded responses, we constrain model outputs using validated emotion regulation strategies such as situation selection and cognitive reappraisal. User emotional trajectories are modeled as a first-order Markov process, and we apply causally-adjusted emotion estimation to obtain unbiased emotional state tracking. Based on this framework, we introduce three trajectory-level metrics: Baseline Emotional Level (BEL), Emotional Trajectory Volatility (ETV), and Emotional Centroid Position (ECP). These metrics collectively capture user emotional dynamics over time and support comprehensive evaluation of long-term emotional support performance of LLMs. Extensive evaluations across a diverse set of LLMs reveal significant disparities in emotional support capabilities and provide actionable insights for model development.",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "http://www.apache.org/licenses/LICENSE-2.0",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://RuoChoXio.github.io/ETrajEval/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "National Engineering Research Center For Software Engineering, Peking University",
+    "url": "https://se.pku.edu.cn",
+    "logo": "https://RuoChoXio.github.io/ETrajEval/static/images/favicon.ico",
+    "sameAs": [
+      "https://github.com/RuoChoXio/ETrajEval"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <!-- <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div> -->
+      <!-- <div class="works-list">
+        TODO: Replace with your lab's related works
+        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+          <div class="work-info">
+            TODO: Replace with actual paper title
+            <h5>Paper Title 1</h5>
+            TODO: Replace with brief description
+            <p>Brief description of the work and its main contribution.</p>
+            TODO: Replace with venue and year
+            <span class="work-venue">Conference/Journal 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        TODO: Add more related works or remove extra items
+        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="logo-container" style="margin-bottom: 1rem;">
+              <img src="../README/asserts/ETrajEval_logo_white.png" alt="Paper Logo" style="height: 160px; width: auto;">
+            </div>
+            <!-- TODO: Replace with your paper title -->
+            <!-- <h1 class="title is-1 publication-title" style="margin: 0;">
+              Detecting <span class="fancy-e">E</span>motional Dynamic <span class="fancy-traj">Traj</span>ectories: An <span class="fancy-eval">Eval</span>uation Framework for Emotional Support in Language Models
+            </h1> -->
+
+            <h1 class="title is-1 publication-title">
+              Detecting 
+              <span class="no-wrap"><span class="fancy-text fancy-e">E</span>motional</span>
+              Dynamic 
+              <span class="no-wrap"><span class="fancy-text fancy-traj">Traj</span>ectories</span>: 
+              <br class="is-hidden-mobile">
+              <!-- <br class="is-hidden-mobile"> 在桌面端强制换行，视觉更平衡 -->
+              An <span class="no-wrap"><span class="fancy-text fancy-eval">Eval</span>uation</span> Framework 
+              <br class="is-hidden-tablet"> <!-- 移动端换行 -->
+              for Emotional Support in LLMs
+            </h1>
+
+            <div class="elegant-divider"></div>
+            
+            
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a>Zhouxing Tan</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a>Ruochong Xiong</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a>Yulong Wan</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                      <a>JinLong Ma</a><sup>2</sup>,</span>
+                      <span class="author-block">
+                      <a>Hanlin Xue</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                      <a>Qichun Deng</a><sup>2</sup>,</span>
+                      <span class="author-block">
+                      <a>Haifeng Jing</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                      <a>Zhengtong Zhang</a><sup>2</sup>,</span>
+                      <span class="author-block">
+                      <a>Depei Liu</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                      <a>Shiyuan Luo</a><sup>2</sup>,</span>
+                      <span class="author-block">
+                      <a>Junfei Liu</a><sup>1,†</sup>
+                      
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block"><sup>1</sup>National Engineering Research Center For Software Engineering, Peking University
+                      <br>
+                      <sup>2</sup>Guangzhou Quwan Network Technology
+                    </span>
+                    <span class="conference-block">
+                      <br>
+                      The 40th Annual AAAI Conference on Artificial Intelligence, AAAI</span>
+                    <!-- TODO: Remove this line if no equal contribution -->
+                    <span class="corres-cntrb"><small><br><sup>†</sup>Corresponding Author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="static/pdfs/ETrajEval_arxiv.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/RuoChoXio/ETrajEval" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container is-max-desktop">
+  <div class="elegant-divider"></div>
+</div>
+
+<!-- Teaser main pic-->
+<section class="hero banner">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata"> -->
+        <!-- TODO: Add your video file path here -->
+      <img src="static/images/framework_v2.png" alt="Banner Image" style="width: 100%; height: auto; display: block;">
+      <!-- </video> -->
+      <!-- TODO: Replace with your video description -->
+      <h2 class="subtitle has-text-centered">
+        Overview of our evaluation framework for emotional support in long-term dialogues. It includes three modules: dynamic user-agent interaction under emotional events, causal emotion estimation based on Markov modeling, and three trajectory-level metrics including Baseline Emotional Level (BEL), Emotional Trajectory Volatility (ETV), and Emotional Centroid Position (ECP).      </h2>
+      <br>
+      </div>
+  </div>
+</section>
+<!-- End main pic -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Emotional support is a core capability in human-AI interaction, with applications including psychological counseling, role play, and companionship. However, existing evaluations of large language models (LLMs) often rely on short, static dialogues and fail to capture the dynamic and long-term nature of emotional support. To overcome this limitation, we shift from snapshot-based evaluation to trajectory-based assessment, adopting a user-centered perspective that evaluates models based on their ability to improve and stabilize user emotional states over time. Our framework constructs a large-scale benchmark consisting of 328 emotional contexts and 1,152 disturbance events, simulating realistic emotional shifts under evolving dialogue scenarios. To encourage psychologically grounded responses, we constrain model outputs using validated emotion regulation strategies such as situation selection and cognitive reappraisal. User emotional trajectories are modeled as a first-order Markov process, and we apply causally-adjusted emotion estimation to obtain unbiased emotional state tracking. Based on this framework, we introduce three trajectory-level metrics: Baseline Emotional Level (BEL), Emotional Trajectory Volatility (ETV), and Emotional Centroid Position (ECP). These metrics collectively capture user emotional dynamics over time and support comprehensive evaluation of long-term emotional support performance of LLMs. Extensive evaluations across a diverse set of LLMs reveal significant disparities in emotional support capabilities and provide actionable insights for model development.          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- ======================================================= -->
+<!-- Evaluation Environment Section (with Image Carousel)    -->
+<!-- ======================================================= -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      
+      <!-- Section Title -->
+      <div class="columns">
+        <div class="column is-full">
+          <h2 class="title is-3">Evaluation Environment and Interaction</h2>
+          <p class="subtitle is-5 has-text-grey" style="margin-top: -0.5rem; margin-bottom: 0.5rem;">
+            A dynamic, theory-driven environment to robustly evaluate long-term emotional support.
+          </p>
+        </div>
+      </div>
+
+      <!-- Main Content: Features and Image Carousel -->
+      <div class="columns is-vcentered is-multiline">
+        <!-- Left Column: Key Features (This part remains unchanged) -->
+        <div class="column is-6-desktop is-12-tablet">
+          <div class="features-list">
+            <!-- Feature 1: Scenarios -->
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-users"></i></div>
+              <div class="feature-content">
+                <h4 class="title is-5">Psychologically-Grounded Scenarios</h4>
+                <p>Simulates 14 realistic distress situations drawn from established psychological and conflict theories.</p>
+              </div>
+            </div>
+            <!-- Feature 2: Strategies -->
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-brain"></i></div>
+              <div class="feature-content">
+                <h4 class="title is-5">Principled Support Strategies</h4>
+                <p>Model behavior is guided and evaluated against six core emotion regulation strategies.</p>
+              </div>
+            </div>
+            <!-- Feature 3: Perturbations -->
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+              <div class="feature-content">
+                <h4 class="title is-5">Dynamic Perturbations</h4>
+                <p>Introduces 'emotional aggravation events' to stress-test the model's consistency and robustness.</p>
+              </div>
+            </div>
+            <!-- Feature 4: Formalization -->
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="feature-content">
+                <h4 class="title is-5">Structured Trajectory Analysis</h4>
+                <p>Formalizes dialogue as a state-based process for objective, trajectory-level metrics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Column: NEW Image Carousel -->
+        <div class="column is-6-desktop is-12-tablet">
+          <div id="feature-carousel" class="feature-carousel-container">
+            <!-- Carousel Images -->
+            <div class="carousel-images">
+              <!-- Image 1: Framework Diagram -->
+              <!-- TODO: Replace with your framework diagram image path -->
+              <img src="static/images/environment.png" alt="Evaluation Framework Diagram" class="carousel-image">
+              <!-- Image 2: Data Distribution -->
+              <img src="static/images/data_dist.png" alt="Emotion Regulation Strategy Distribution" class="carousel-image is-active">
+            </div>
+
+            <!-- Carousel Navigation Dots -->
+            <div class="carousel-nav">
+              <span class="carousel-dot is-active" data-slide="0"></span>
+              <span class="carousel-dot" data-slide="1"></span>
+            </div>
+            
+            <!-- Carousel Captions -->
+            <div class="carousel-captions">
+              <!-- Caption 1 -->
+              <p class="carousel-caption">
+                Overview of the dynamic user-agent interaction framework, including scenarios, strategies, and perturbations.
+              </p>
+              <!-- Caption 2 -->
+              <!-- TODO: Write a caption for your framework diagram -->
+              <p class="carousel-caption is-active">
+                Distribution of emotion regulation strategies guiding model responses, constrained by psychological theory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Dynamic Trajectories Metrics</h2>
+
+      <!-- Tab Navigation -->
+      <div class="tabs is-centered is-boxed is-medium">
+        <ul>
+          <li class="is-active" data-tab="bel-tab">
+            <a>
+              <span class="icon is-small"><i class="fas fa-chart-bar" aria-hidden="true"></i></span>
+              <span>BEL</span>
+            </a>
+          </li>
+          <li data-tab="ecp-tab">
+            <a>
+              <span class="icon is-small"><i class="fas fa-wave-square" aria-hidden="true"></i></span>
+              <span>ECP</span>
+            </a>
+          </li>
+          <li data-tab="etv-tab">
+            <a>
+              <span class="icon is-small"><i class="fas fa-crosshairs" aria-hidden="true"></i></span>
+              <span>ETV</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div id="metric-tab-content">
+        <!-- BEL Tab Panel -->
+        <div class="tab-pane is-active" id="bel-tab">
+          <div class="columns is-vcentered">
+            <div class="column is-6">
+              <!-- TODO: Replace with your BEL image -->
+              <img src="static/images/BEL.png" alt="Baseline Emotional Level Visualization" class="metric-image">
+            </div>
+            <div class="column is-6">
+              <div class="metric-description">
+                <h4 class="title is-4">Baseline Emotional Level (BEL)</h4>
+                <p>
+                  This metric quantifies the user's <strong>average emotional state</strong> throughout the entire dialogue. It provides a high-level overview of the interaction's overall positivity.
+                </p>
+                <p>A higher BEL score indicates that the model is more effective at maintaining a positive emotional climate for the user over the long term.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ECP Tab Panel -->
+        <div class="tab-pane" id="ecp-tab">
+          <div class="columns is-vcentered">
+            <div class="column is-6">
+              <!-- TODO: Replace with your ETV image -->
+              <img src="static/images/ECP.png" alt="Emotional Centroid Position Visualization" class="metric-image">
+            </div>
+            <div class="column is-6">
+              <div class="metric-description">
+                <h4 class="title is-4">Emotional Centroid Position (ECP)</h4>
+                <p>
+                  ECP visualizes the average emotional shift as a single centroid point <strong>(C<sub>x</sub>, C<sub>y</sub>)</strong>. C<sub>x</sub> represents the mean emotion <em>before</em> a model response, and C<sub>y</sub> is the mean emotion after.
+                </p>
+                <p>
+                  A centroid located above the y=x diagonal line indicates a net positive impact, showing the model systematically improves the user's emotional state.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ETV Tab Panel -->
+        <div class="tab-pane" id="etv-tab">
+          <div class="columns is-centered">
+            <div class="column is-10"> <!-- Removed has-text-centered from here -->
+
+              <!-- Center the image using a block with auto margins -->
+              <div class="image-container-centered">
+                <!-- TODO: Replace with your ECP image -->
+                <img src="static/images/ETV.png" alt="Emotional Trajectory Volatility Visualization" class="metric-image-1">
+              </div>
+              
+              <!-- The description block will now default to left-align -->
+              <div class="metric-description" style="margin-top: 2rem;">
+                <h4 class="title is-4">Emotional Trajectory Volatility (ETV)</h4>
+                <p>
+                  ETV measures the model's ability to drive <strong>positive emotional shifts</strong>. It rewards upward transitions (e.g., from sad to neutral) more than downward ones, capturing the efficiency of emotional regulation.
+                </p>
+                <p>A higher ETV signifies a stronger capability to elevate users from negative states and prevent regressions from positive ones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Causally-Adjusted Emotion Estimation Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-widescreen is-12-desktop">
+
+          <!-- Section Title -->
+          <h2 class="title is-3">Causally-Adjusted Emotion Estimation</h2>
+
+          <!-- Introductory Text -->
+          <div class="content has-text-justified">
+            <p>
+              Conventional emotion trackers often mistake correlation for causation. They can be misled by <strong>unobserved confounders</strong>, like a user's personality or mood that create spurious links between emotional states. This introduces bias, making it hard to measure a model's true impact. To solve this, we shift from statistical correlation to <strong>causal inference</strong>.
+            </p>
+          </div>
+
+          <!-- Centered Image and Caption -->
+          <div style="margin: 2rem auto; max-width: 700px;">
+            <figure class="image">
+              <!-- Please update the src attribute to your actual causal graph image path -->
+              <img src="static/images/causal_graph.png" alt="Causal graph of emotional evolution" class="feature-image">
+            </figure>
+            <p class="image-caption">
+              Causal graph illustrating emotional evolution with unobserved confounder. Right: theoretical intervention 
+              do(E<sub>t-1</sub>) removes spurious correlation via backdoor adjustment.
+              <br>
+              <strong>Variable Definitions:</strong> 
+              <em>Q</em> (User Dialogue History), 
+              <em>A</em> (Model Dialogue History), 
+              <em>S</em> (Emotion State), 
+              <em>I</em> (Internal Thought), 
+              <em>U</em> (Unobserved Confounder).
+            </p>
+          </div>
+
+          <!-- Concluding Text -->
+          <div class="content has-text-justified">
+            <p>
+              Using do-calculus, we mathematically intervene to remove these biasing effects. The result is a de-biased, post-intervention emotional distribution, which we use as our calibrated estimate:
+            </p>
+          </div>
+
+          <!-- New Formula Block -->
+          <div class="causal-formula-box">
+              <pre><code>P(S<sub>t</sub>|do(S<sub>t-1</sub>)) = E<sub>S'<sub>t-1</sub>,Q',A'</sub> E<sub>Q,A</sub>[P(S<sub>t</sub>|I,S'<sub>t-1</sub>,Q',A')]</code></pre>
+          </div>
+
+          <div class="content has-text-justified">
+              <p>
+                By building our emotional trajectories from these causally-adjusted estimates, we ensure that our metrics (BEL, ETV, ECP) more faithfully reflect the model's true capability to provide emotional support.
+              </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Causally-Adjusted Emotion Estimation Section -->
+
+<!-- BEL Results Table Section -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+
+      <!-- Section Title -->
+      <h2 class="title is-3">Baseline Emotional Level (BEL) Results</h2>
+
+      <!-- Introductory Paragraph -->
+      <div class="content has-text-justified">
+        <p>
+          The Baseline Emotional Level (BEL) metric assesses a model's ability to maintain a positive and stable emotional climate for the user over long conversations. Higher scores indicate a stronger performance in providing sustained emotional support. Below is a detailed comparison across various closed and open-sourced LLMs in both English and Chinese contexts.
+        </p>
+      </div>
+
+      <!-- The container makes the table scrollable on small screens -->
+      <div class="results-table-container">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th rowspan="2" class="model-name">LLMs</th>
+              <th colspan="2">Overall</th>
+              <th colspan="2">CogChg</th>
+              <th colspan="2">SitMod</th>
+              <th colspan="2">AttDep</th>
+              <th colspan="2">ERFlex</th>
+              <th colspan="2">SitSel</th>
+              <th colspan="2">ResMod</th>
+            </tr>
+            <tr>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="15" class="table-group-header">Closed-sourced LLMs</td>
+            </tr>
+            <tr>
+              <td class="model-name">O3-2025-04-16</td>
+              <td>43.98</td><td>39.22</td><td>48.64</td><td>40.31</td><td>38.54</td><td>36.09</td><td><span class="is-second-best">50.81</span></td><td>44.94</td><td>37.87</td><td>34.35</td><td>43.27</td><td>39.67</td><td>45.31</td><td>41.29</td>
+            </tr>
+            <tr>
+              <td class="model-name">Gemini-2.5-Pro</td>
+              <td>42.65</td><td>37.41</td><td>44.18</td><td>33.91</td><td>43.65</td><td>37.51</td><td>37.12</td><td>39.48</td><td>38.47</td><td>30.46</td><td>42.18</td><td>40.65</td><td>49.00</td><td>44.80</td>
+            </tr>
+            <tr>
+              <td class="model-name">Claude-Opus-4</td>
+              <td>41.43</td><td>34.68</td><td>46.22</td><td>34.16</td><td>40.12</td><td>29.09</td><td>41.99</td><td>35.26</td><td>31.14</td><td>31.97</td><td>46.27</td><td>37.22</td><td>41.47</td><td>43.15</td>
+            </tr>
+            <tr>
+              <td class="model-name">Doubao-Seed-1.6</td>
+              <td>47.22</td><td>42.36</td><td>47.72</td><td>37.87</td><td>46.13</td><td>40.98</td><td>46.49</td><td>43.71</td><td>42.96</td><td>38.65</td><td>50.27</td><td><span class="is-second-best">47.88</span></td><td><span class="is-second-best">50.17</span></td><td>48.34</td>
+            </tr>
+            <tr>
+              <td class="model-name">Doubao-1.5-Pro-Character</td>
+              <td>34.90</td><td>37.51</td><td>33.68</td><td>35.78</td><td>31.42</td><td>34.11</td><td>37.62</td><td>42.73</td><td>36.54</td><td>35.90</td><td>37.56</td><td>41.34</td><td>34.68</td><td>37.94</td>
+            </tr>
+            <tr>
+              <td class="model-name">ChatGPT-4o-Latest</td>
+              <td><span class="is-second-best">48.86</span></td><td>43.84</td><td><strong class="is-best">52.45</strong></td><td>41.02</td><td>44.51</td><td><strong class="is-best">41.78</strong></td><td><strong class="is-best">53.41</strong></td><td>48.48</td><td>44.58</td><td>39.27</td><td><span class="is-second-best">51.21</span></td><td><strong class="is-best">48.61</strong></td><td>47.44</td><td>46.73</td>
+            </tr>
+            <tr>
+              <td class="model-name">GLM-4-Plus</td>
+              <td>42.92</td><td>36.39</td><td>44.44</td><td>36.94</td><td>39.32</td><td>32.61</td><td>45.66</td><td>39.34</td><td>39.81</td><td>34.99</td><td>44.13</td><td>36.53</td><td>45.20</td><td>39.49</td>
+            </tr>
+            <tr>
+              <td class="model-name">ChatGLM-4</td>
+              <td>40.14</td><td>33.83</td><td>40.29</td><td>31.87</td><td>37.33</td><td>32.15</td><td>43.15</td><td>36.93</td><td>37.75</td><td>31.90</td><td>41.22</td><td>34.26</td><td>42.52</td><td>37.92</td>
+            </tr>
+            <tr>
+              <td class="model-name">Grok-4</td>
+              <td>39.73</td><td>31.55</td><td>42.41</td><td>28.60</td><td>37.19</td><td>29.31</td><td>43.73</td><td>36.15</td><td>35.68</td><td>26.82</td><td>37.56</td><td>35.63</td><td>41.92</td><td>35.82</td>
+            </tr>
+            <tr>
+              <td colspan="15" class="table-group-header">Open-sourced LLMs</td>
+            </tr>
+            <tr>
+              <td class="model-name">Phi-4-14B</td>
+              <td>44.69</td><td>37.42</td><td>44.10</td><td>33.58</td><td>42.41</td><td>32.56</td><td>47.48</td><td>42.13</td><td>42.15</td><td>37.08</td><td>45.71</td><td>42.62</td><td>47.87</td><td>40.84</td>
+            </tr>
+            <tr>
+              <td class="model-name">DeepSeek-V3</td>
+              <td>44.69</td><td>35.43</td><td>45.30</td><td>34.88</td><td>40.27</td><td>28.71</td><td>46.54</td><td>42.53</td><td>45.12</td><td>33.25</td><td>46.32</td><td>40.61</td><td>46.19</td><td>36.17</td>
+            </tr>
+            <tr>
+              <td class="model-name">DeepSeek-R1</td>
+              <td>47.57</td><td><strong class="is-best">45.32</strong></td><td>48.87</td><td><span class="is-second-best">43.43</span></td><td>43.57</td><td>40.77</td><td>46.22</td><td><strong class="is-best">50.64</strong></td><td><span class="is-second-best">46.55</span></td><td><strong class="is-best">47.01</strong></td><td><strong class="is-best">52.90</strong></td><td>47.88</td><td>48.23</td><td>45.31</td>
+            </tr>
+            <tr>
+              <td class="model-name">Qwen3-235B-A22B</td>
+              <td>47.18</td><td>40.40</td><td>47.78</td><td>38.08</td><td><span class="is-second-best">46.52</span></td><td>36.57</td><td>49.50</td><td>42.33</td><td>45.35</td><td>37.12</td><td>48.20</td><td>42.72</td><td>45.94</td><td><span class="is-second-best">48.67</span></td>
+            </tr>
+            <tr>
+              <td class="model-name">Mistral-3.2-24B-Instruct</td>
+              <td>33.93</td><td>27.93</td><td>32.71</td><td>27.63</td><td>30.26</td><td>24.09</td><td>36.13</td><td>29.46</td><td>31.06</td><td>26.25</td><td>36.98</td><td>30.15</td><td>38.90</td><td>31.93</td>
+            </tr>
+            <tr>
+              <td class="model-name">Kimi-K2-Preview</td>
+              <td><strong class="is-best">49.00</strong></td><td><span class="is-second-best">45.11</span></td><td><span class="is-second-best">49.96</span></td><td><strong class="is-best">47.57</strong></td><td><strong class="is-best">49.34</strong></td><td><span class="is-second-best">41.74</span></td><td>48.55</td><td><span class="is-second-best">50.00</span></td><td>43.86</td><td><span class="is-second-best">41.04</span></td><td>49.81</td><td>45.73</td><td><strong class="is-best">52.11</strong></td><td>45.19</td>
+            </tr>
+            <tr>
+              <td class="model-name">Qwen3-8B</td>
+              <td>46.56</td><td>38.85</td><td>47.97</td><td>37.02</td><td>45.67</td><td>33.74</td><td>45.79</td><td>46.75</td><td>44.65</td><td>33.41</td><td>47.52</td><td>42.03</td><td>47.46</td><td>43.98</td>
+            </tr>
+            <tr>
+              <td class="model-name">Qwen3-32B</td>
+              <td>46.87</td><td>40.88</td><td>47.32</td><td>38.03</td><td>44.17</td><td>35.98</td><td>47.81</td><td>46.34</td><td><strong class="is-best">46.69</strong></td><td>36.36</td><td>47.37</td><td>42.73</td><td>48.79</td><td><strong class="is-best">49.99</strong></td>
+            </tr>
+            <tr>
+              <td class="model-name">Llama-3.1-70B-Instruct</td>
+              <td>42.94</td><td>31.07</td><td>42.15</td><td>30.23</td><td>41.12</td><td>30.13</td><td>46.55</td><td>30.47</td><td>43.69</td><td>30.38</td><td>44.51</td><td>33.40</td><td>40.98</td><td>32.66</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">
+        Comparison of Baseline Emotional Level (BEL) across different models. For each case, the model with the highest BEL is marked in <strong style="color: #16a34a;">green</strong>, and the second-highest is <span style="color: var(--primary-color); border-bottom: 2px solid var(--primary-hover);">underlined</span>, indicating their relative effectiveness.
+        <br><br>
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ETV Results Table Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+
+      <!-- Section Title -->
+      <h2 class="title is-3">Emotional Trajectory Volatility (ETV) Results</h2>
+
+      <!-- Introductory Paragraph -->
+      <div class="content has-text-justified">
+        <p>
+          Emotional Trajectory Volatility (ETV) measures each model's ability to promote a rapid and stable transition toward positive emotional states. Higher values suggest stronger emotional support effectiveness, rewarding upward emotional shifts more than downward ones.
+        </p>
+      </div>
+
+      <!-- The container makes the table scrollable on small screens -->
+      <div class="results-table-container">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th rowspan="2" class="model-name">LLMs</th>
+              <th colspan="2">Overall</th>
+              <th colspan="2">CogChg</th>
+              <th colspan="2">SitMod</th>
+              <th colspan="2">AttDep</th>
+              <th colspan="2">ERFlex</th>
+              <th colspan="2">SitSel</th>
+              <th colspan="2">ResMod</th>
+            </tr>
+            <tr>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+              <th>EN</th><th>ZH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="15" class="model-name table-group-header">Closed-sourced LLMs</td>
+            </tr>
+            <tr>
+              <td class="model-name">O3-2025-04-16</td>
+              <td>20.17</td><td>14.89</td><td>19.91</td><td><strong class="is-best">14.74</strong></td><td>18.23</td><td>12.45</td><td>28.09</td><td>20.39</td><td>15.26</td><td>11.54</td><td>18.55</td><td>13.87</td><td>22.65</td><td>17.95</td>
+            </tr>
+            <tr>
+              <td class="model-name">Gemini-2.5-Pro</td>
+              <td>18.95</td><td>13.39</td><td>18.65</td><td>9.47</td><td>19.80</td><td><span class="is-second-best">14.43</span></td><td>21.01</td><td>19.05</td><td>15.57</td><td>10.45</td><td>17.99</td><td>13.26</td><td>20.84</td><td>15.85</td>
+            </tr>
+            <tr>
+              <td class="model-name">Claude-Opus-4</td>
+              <td>19.89</td><td>10.81</td><td>20.15</td><td>9.64</td><td>20.13</td><td>7.47</td><td>26.10</td><td>14.53</td><td>13.12</td><td>7.56</td><td><span class="is-second-best">21.03</span></td><td>13.26</td><td>19.38</td><td>14.83</td>
+            </tr>
+            <tr>
+              <td class="model-name">Doubao-Seed-1.6</td>
+              <td>21.55</td><td>15.31</td><td>19.92</td><td>11.68</td><td>21.97</td><td>13.81</td><td>25.38</td><td>19.25</td><td>18.46</td><td>14.74</td><td><strong class="is-best">21.72</strong></td><td><span class="is-second-best">15.69</span></td><td>22.94</td><td><span class="is-second-best">19.48</span></td>
+            </tr>
+            <tr>
+              <td class="model-name">Doubao-1.5-Pro-Character</td>
+              <td>17.72</td><td>14.48</td><td>15.62</td><td>11.66</td><td>16.13</td><td>12.53</td><td>23.45</td><td>21.40</td><td>16.46</td><td>15.02</td><td>17.71</td><td>12.08</td><td>19.11</td><td>16.88</td>
+            </tr>
+            <tr>
+              <td class="model-name">ChatGPT-4o-Latest</td>
+              <td><span class="is-second-best">21.99</span></td><td><span class="is-second-best">15.40</span></td><td><strong class="is-best">22.09</strong></td><td>13.26</td><td>20.75</td><td>13.32</td><td><strong class="is-best">29.02</strong></td><td>20.74</td><td>19.23</td><td>13.55</td><td>20.62</td><td>15.37</td><td>21.30</td><td>18.56</td>
+            </tr>
+            <tr>
+              <td class="model-name">GLM-4-Plus</td>
+              <td>21.00</td><td>12.56</td><td>20.55</td><td>12.63</td><td>18.22</td><td>9.88</td><td>25.29</td><td>17.72</td><td>20.03</td><td>11.63</td><td>19.92</td><td>9.77</td><td><span class="is-second-best">23.68</span></td><td>15.13</td>
+            </tr>
+            <tr>
+              <td class="model-name">ChatGLM-4</td>
+              <td>20.25</td><td>11.56</td><td>19.58</td><td>8.90</td><td>19.15</td><td>10.29</td><td>25.05</td><td>15.14</td><td>17.53</td><td>11.57</td><td>19.25</td><td>9.32</td><td>22.17</td><td>16.25</td>
+            </tr>
+            <tr>
+              <td class="model-name">Grok-4</td>
+              <td>18.85</td><td>8.73</td><td>17.83</td><td>6.71</td><td>19.19</td><td>7.30</td><td>25.40</td><td>11.45</td><td>15.53</td><td>5.61</td><td>15.61</td><td>9.79</td><td>20.51</td><td>13.51</td>
+            </tr>
+            <tr>
+              <td colspan="15" class="model-name table-group-header">Open-sourced LLMs</td>
+            </tr>
+            <tr>
+              <td class="model-name">Phi-4-14B</td>
+              <td>21.37</td><td>13.21</td><td>21.27</td><td>9.94</td><td>19.66</td><td>11.24</td><td>25.65</td><td>19.12</td><td>18.99</td><td>13.89</td><td>20.12</td><td>13.60</td><td>23.64</td><td>14.33</td>
+            </tr>
+            <tr>
+              <td class="model-name">DeepSeek-V3</td>
+              <td>20.32</td><td>12.02</td><td>19.52</td><td>10.77</td><td>18.82</td><td>7.57</td><td>25.04</td><td>17.32</td><td><span class="is-second-best">20.39</span></td><td>10.77</td><td>18.98</td><td>14.22</td><td>20.49</td><td>14.32</td>
+            </tr>
+            <tr>
+              <td class="model-name">DeepSeek-R1</td>
+              <td>20.38</td><td>15.30</td><td>18.27</td><td>13.20</td><td>20.68</td><td>14.26</td><td>23.76</td><td>21.70</td><td>19.77</td><td><span class="is-second-best">15.37</span></td><td>20.03</td><td>13.25</td><td>20.97</td><td>15.92</td>
+            </tr>
+            <tr>
+              <td class="model-name">Qwen3-235B-A22B</td>
+              <td>21.13</td><td>14.02</td><td>19.40</td><td>11.89</td><td><span class="is-second-best">23.10</span></td><td>13.66</td><td>26.46</td><td>19.38</td><td>19.99</td><td>11.88</td><td>19.86</td><td>11.67</td><td>18.47</td><td>17.35</td>
+            </tr>
+            <tr>
+              <td class="model-name">Mistral-3.2-24B-Instruct</td>
+              <td>15.93</td><td>7.01</td><td>13.41</td><td>6.64</td><td>14.88</td><td>4.19</td><td>23.75</td><td>9.58</td><td>13.19</td><td>6.43</td><td>16.09</td><td>7.54</td><td>16.63</td><td>9.19</td>
+            </tr>
+            <tr>
+              <td class="model-name">Kimi-K2-Preview</td>
+              <td><strong class="is-best">22.92</strong></td><td><strong class="is-best">16.74</strong></td><td><span class="is-second-best">21.59</span></td><td><span class="is-second-best">14.36</span></td><td><strong class="is-best">25.15</strong></td><td><strong class="is-best">16.20</strong></td><td>26.12</td><td><strong class="is-best">21.86</strong></td><td>20.37</td><td><strong class="is-best">16.81</strong></td><td>19.56</td><td><strong class="is-best">16.01</strong></td><td><strong class="is-best">24.84</strong></td><td>17.00</td>
+            </tr>
+            <tr>
+              <td class="model-name">Qwen3-8B</td>
+              <td>21.22</td><td>12.73</td><td>19.56</td><td>9.69</td><td>21.87</td><td>11.34</td><td>24.61</td><td>20.59</td><td><strong class="is-best">20.50</strong></td><td>10.91</td><td>20.62</td><td>11.41</td><td>20.99</td><td>15.22</td>
+            </tr>
+            <tr>
+              <td class="model-name">Qwen3-32B</td>
+              <td>21.81</td><td>14.91</td><td>19.99</td><td>11.97</td><td>21.98</td><td>14.20</td><td><span class="is-second-best">28.14</span></td><td><span class="is-second-best">21.77</span></td><td>19.96</td><td>11.42</td><td>19.25</td><td>12.99</td><td>22.95</td><td><strong class="is-best">19.61</strong></td>
+            </tr>
+            <tr>
+              <td class="model-name">Llama-3.1-70B-Instruct</td>
+              <td>19.09</td><td>9.75</td><td>16.16</td><td>8.52</td><td>19.03</td><td>10.94</td><td>24.13</td><td>11.44</td><td>18.99</td><td>8.89</td><td>19.71</td><td>9.40</td><td>18.39</td><td>9.64</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">
+        ETV results comparison. The model with the highest ETV is marked in <strong style="color: #16a34a;">green</strong>, and the second-highest is <span style="color: var(--primary-color); border-bottom: 2px solid var(--primary-hover);">underlined</span>.
+        <br><br>
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Visual Analysis Section - Vertical Scroll Version -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Section Title -->
+      <h2 class="title is-3">Centroid Position & Trajectory Visualization</h2>
+    </div>
+  </div>
+
+  <!-- Vertial Scroll Container -->
+  <div class="vertical-scroll-container">
+
+    <!-- Slide 1: Emotional Centroid Position -->
+    <div class="vertical-slide">
+      <div class="carousel-slide-box">
+        <div class="columns is-vcentered is-multiline is-variable is-6">
+          <!-- Left Column: Simplified Text -->
+          <div class="column is-6-desktop is-12-tablet">
+            <div class="content has-text-justified">
+              <h4 class="title is-4">Emotional Centroid Position</h4>
+              <p>
+                We visualize the emotional guidance capabilities of LLMs using an <strong>Emotional Centroid Position</strong>. The horizontal axis (C<sub>x</sub>) reflects the overall positivity of a dialogue, while the vertical axis (C<sub>y</sub> - C<sub>x</sub>) measures the model's ability to consistently improve the user's emotion.
+              </p>
+            </div>
+          </div>
+          <!-- Right Column: Image -->
+          <div class="column is-6-desktop is-12-tablet">
+            <figure class="image">
+              <img src="static/images/centroids_points.png" alt="Emotional Centroid Position Visualization" class="feature-image-1">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Visual Trajectory Analysis -->
+    <div class="vertical-slide">
+      <div class="carousel-slide-box">
+        <div class="columns is-vcentered is-multiline is-variable is-6">
+          <!-- Left Column: Simplified Text -->
+          <div class="column is-6-desktop is-12-tablet">
+            <div class="content has-text-justified">
+              <h4 class="title is-4">Trajectory Under Disturbance</h4>
+              <p>
+                We visualize emotional trajectories under different levels of disturbance. The analysis shows:
+              </p>
+              <ul>
+                <li>Models with higher ETV scores help users recover from low states faster.</li>
+                <li>Without disturbances, most models quickly return users to a neutral state.</li>
+                <li>Stronger models show more resilience when multiple disturbances occur.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Right Column: Image -->
+          <div class="column is-6-desktop is-12-tablet">
+            <figure class="image">
+              <img src="static/images/sentiment_trajectories.png" alt="Emotional Trajectory Visualization" class="feature-image-1">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End of Vertical Scroll Container -->
+
+  <!-- Final Note Below -->
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <p class="section-footer-note">
+        For full results and more details, please refer to our paper.
+        <br><br>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Dynamic Trajectories Metrics</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        TODO: Replace with your research result images
+        <img src="../pages/static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        TODO: Replace with description of this result
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        Your image here
+        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        Your image here
+        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      Your image here
+      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+End image carousel
+
+
+
+Youtube video
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      Paper video.
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            TODO: Replace with your YouTube video ID
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          TODO: Add poster image for better preview
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            Your video file here
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          TODO: Add poster image for better preview
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            Your video file here
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          TODO: Add poster image for better preview
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            Your video file here
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      TODO: Replace with your poster PDF
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>
+        @We will supplement this section soon.
+        <!-- @article{YourPaperKey2024,
+          title={Your Paper Title Here},
+          author={First Author and Second Author and Third Author},
+          journal={Conference/Journal Name},
+          year={2024},
+          url={https://your-domain.com/your-project-page}
+        } -->
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

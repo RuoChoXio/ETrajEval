@@ -1,0 +1,1533 @@
+/* Modern CSS Variables for consistent theming */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #64748b;
+  --accent-color: #0ea5e9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  --background-primary: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-accent: #f1f5f9;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-subtle: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: var(--background-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Modern Button Styles */
+.button {
+  border-radius: var(--border-radius) !important;
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+  border: 2px solid transparent !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.button.is-dark {
+  background: var(--text-primary) !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: var(--shadow-md);
+}
+
+.button.is-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: var(--primary-color) !important;
+}
+
+.button.is-dark:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.footer .icon-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.link-block a {
+    margin: 8px 4px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+/* Hero Section Modernization */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero.is-light {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-body {
+  padding: 4rem 1.5rem;
+}
+
+.teaser .hero-body {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.teaser {
+  font-family: 'Inter', sans-serif;
+}
+
+/* title part*/
+/* 花体样式 */
+.fancy-e {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.2rem;
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-traj {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #3498db;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-eval {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #2ecc71;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Publication Content Styling */
+/* .publication-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.1 !important;
+} */
+
+.publication-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 800 !important; /* 超粗体，更有冲击力 */
+    font-size: 2.2rem !important;   /* 根据需要调整大小 */
+    color: #2c3e50 !important;    /* 深灰，比纯黑柔和 */
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    letter-spacing: -0.02em;      /* 稍微收紧字间距 */
+}
+
+.fancy-text {
+    display: inline-block;
+    font-weight: 900; /* 让关键词比普通标题更粗 */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* 文字填充透明，显示背景渐变 */
+    position: relative;
+}
+
+/* E - 情感暖色渐变 */
+.fancy-e {
+    font-size: 1.1em; /* 稍微放大首字母 */
+    background-image: linear-gradient(135deg, #739C71 10%, #3E8C90 100%);
+    /* 备选方案: background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); */
+}
+
+/* Traj - 动态科技渐变 */
+.fancy-traj {
+    background-image: linear-gradient(135deg, #739C71 10%, #97c362 100%);
+    /* 备选方案 (更亮): background-image: linear-gradient(135deg, #0061ff 0%, #60efff 100%); */
+}
+
+/* Eval - 评估绿色渐变 */
+.fancy-eval {
+    background-image: linear-gradient(135deg, #97c362 10%, #e9e516 100%);
+    /* 备选方案 (更科技): background-image: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); */
+}
+
+/* 可选：添加微妙的鼠标悬停效果 */
+.fancy-text:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* 换行 */
+.no-wrap {
+  /* 关键属性：阻止元素内的文本换行 */
+  white-space: nowrap; 
+}
+
+/* --- 解决 Section 间距过大的问题 --- */
+
+/* 1. 减少第一个 hero 区域的底部内边距 */
+/* 我们用 #main-content > .hero 来精确定位第一个 section */
+#main-content > .hero .hero-body {
+  padding-bottom: 0.5rem; /* 从默认的 3rem 大幅减少 */
+}
+
+/* 2. 移除第二个 banner 区域的顶部内边距 */
+.hero.banner .hero-body {
+  padding-top: 1rem; /* 完全移除顶部内边距 */
+}
+
+/* --- 优雅的渐变分割线 --- */
+.elegant-divider {
+  width: 90%; /* 线条不占满全宽，留有呼吸感 */
+  height: 1.5px;  /* 线条高度 */
+  margin: 1rem auto; /* 上下留出间距，auto使其水平居中 */
+  
+  /* 核心：使用线性渐变作为背景，实现两端淡出效果 */
+  /* 这个颜色适用于深色背景，如果你的背景是浅色，请用下面的备用方案 */
+  background: linear-gradient(to right, 
+    transparent, 
+    rgba(8, 8, 8, 0.164),
+    transparent
+  );
+}
+
+.publication-banner {
+  max-height: 70vh;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  margin: 2rem 0;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+}
+
+.publication-header .hero-body {
+  padding: 6rem 1.5rem 4rem;
+}
+
+.publication-authors {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.publication-venue {
+    color: var(--text-secondary);
+    width: fit-content;
+    font-weight: 600;
+    background: var(--background-accent);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.publication-awards {
+    color: #ef4444;
+    width: fit-content;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid #ef4444;
+    margin-top: 1rem;
+}
+
+.publication-authors a {
+   color: var(--primary-color) !important;
+   text-decoration: none;
+   font-weight: 600;
+   transition: var(--transition);
+   position: relative;
+}
+
+.publication-authors a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--gradient-accent);
+    transition: var(--transition);
+}
+
+.publication-authors a:hover::after {
+    width: 100%;
+}
+
+.publication-authors a:hover {
+    color: var(--primary-hover) !important;
+}
+
+.author-block {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.conference-block {
+  color: #236741;
+  font-style: italic;
+  /* margin-right: 0.5rem; */
+  font-size: 0.975rem;
+}
+
+.publication-banner img {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.publication-banner img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Modern Video and Carousel Styling */
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-xl);
+    transition: var(--transition);
+}
+
+.publication-video:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-lg);
+}
+
+.publication-body img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.publication-body img:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.results-carousel {
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.results-carousel .item {
+  margin: 1rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  font-size: 0;
+  background: var(--background-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.results-carousel .item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.results-carousel .item img,
+.results-carousel video {
+  margin: 0;
+  border-radius: var(--border-radius);
+  width: 100%;
+  height: auto;
+}
+
+.results-carousel .subtitle {
+  font-size: 1rem !important;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Pagination and Misc Improvements */
+.slider-pagination .slider-page {
+  background: var(--primary-color);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.slider-pagination .slider-page.is-active {
+  background: var(--primary-hover);
+  transform: scale(1.2);
+}
+
+.corres-cntrb { 
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Section Titles */
+.title.is-3 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--text-primary);
+  margin-bottom: 2rem !important;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.title.is-3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+/* Content Improvements */
+.content.has-text-justified {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.content.has-text-justified p {
+  margin-bottom: 1.5rem;
+}
+
+/* Footer Improvements */
+.footer {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 1.5rem;
+}
+
+.footer .content {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* BibTeX Styling */
+pre {
+  background: var(--background-accent) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 1.5rem !important;
+  font-size: 0.9rem !important;
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+code {
+  background: var(--background-accent) !important;
+  color: var(--text-primary) !important;
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace !important;
+}
+
+/* BibTeX Section Improvements */
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.copy-bibtex-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-bibtex-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.copy-bibtex-btn.copied {
+  background: #10b981;
+}
+
+.copy-bibtex-btn.copied .copy-text::after {
+  content: "ied!";
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.scroll-to-top:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* More Works Dropdown */
+.more-works-container {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.more-works-btn {
+  background: var(--background-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.more-works-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: var(--background-secondary);
+  border-color: var(--primary-color);
+}
+
+.more-works-btn .dropdown-arrow {
+  transition: var(--transition);
+  font-size: 0.8rem;
+}
+
+.more-works-btn.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.more-works-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 400px;
+  max-width: 90vw;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.more-works-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  background: var(--background-accent);
+  color: var(--text-primary);
+}
+
+.works-list {
+  padding: 1rem;
+}
+
+.work-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  margin-bottom: 0.5rem;
+}
+
+.work-item:hover {
+  background: var(--background-accent);
+  transform: translateX(4px);
+}
+
+.work-info h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.work-info p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.work-venue {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.work-item .fas {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* --- Subtitle Style for Banner (Modern Tech Style) --- */
+.hero.banner .subtitle {
+    /* 1. 字体一致性 */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* 2. 现代感和冲击力 */
+    font-weight: 500; /* 中等字重，看起来更清晰锐利 */
+    line-height: 1.6;
+    color: #2c3e50;   /* 使用更深的蓝灰色，科技感更强 */
+    font-size: 1.2rem;
+    letter-spacing: -0.01em; /* 稍微收紧字间距，更紧凑 */
+    
+    /* 3. 优化排版 */
+    max-width: 750px; /* 同样限制宽度 */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* 4. 增加与上方图片的间距 */
+    margin-top: 2rem;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .hero.banner .subtitle {
+        font-size: 1.05rem;
+        line-height: 1.55;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Mobile Responsive Improvements */
+@media screen and (max-width: 768px) {
+  .hero-body {
+    padding: 2rem 1rem;
+  }
+  
+  .publication-header .hero-body {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .publication-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .publication-authors {
+    font-size: 1rem !important;
+  }
+  
+  .button {
+    margin: 0.25rem !important;
+    font-size: 0.875rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .more-works-container {
+    bottom: 2rem;
+    right: 1rem;
+    top: auto;
+  }
+  
+  .more-works-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .more-works-dropdown {
+    width: calc(100vw - 2rem);
+    right: -1rem;
+    bottom: calc(100% + 0.5rem);
+    top: auto;
+  }
+  
+  .results-carousel .item {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .teaser .hero-body {
+    padding: 1rem;
+  }
+  
+  .content.has-text-justified {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .publication-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-body {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .more-works-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+  
+  .more-works-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .more-works-dropdown {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    right: 0;
+    width: calc(100vw - 2rem);
+    max-width: 90vw;
+  }
+  
+  .link-block {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tablet Responsive */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero-body {
+    padding: 3rem 2rem;
+  }
+  
+  .publication-header .hero-body {
+    padding: 4rem 2rem 3rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero, .section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Improved focus states for accessibility */
+.button:focus,
+.related-works-btn:focus,
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+
+/* Print styles */
+@media print {
+  .more-works-container {
+    display: none;
+  }
+  
+  .hero, .section {
+    animation: none;
+  }
+  
+  .button {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    box-shadow: none !important;
+  }
+}
+
+
+
+
+/* --- Feature List Container --- */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+}
+
+/* --- Individual Feature Item --- */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* --- Feature Icon Styling --- */
+.feature-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5; 
+}
+.feature-icon i {
+  font-size: 1.25rem;
+  color: #3B2667; 
+}
+
+/* --- Feature Content (Title & Paragraph) --- */
+.feature-content .title {
+  margin-bottom: 0.5rem !important;
+  color: #363636;
+}
+.feature-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* --- Image and Caption --- */
+.feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature-image-1 {
+  max-width: 100%;
+  max-height: 600px; /* 您可以根据需要调整这个数值 */
+  max-width: 400px;
+  width: auto;
+  height: auto;
+  display: block; /* 确保图片表现为块级元素，以便应用边距等 */
+  margin: 0 auto; /* 让图片在其容器内水平居中 */
+}
+.image-caption {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #7a7a7a;
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media screen and (max-width: 1023px) {
+  .feature-image {
+    margin-top: 2rem;
+  }
+}
+
+
+
+/* ======================================================= */
+/* Dynamic Metrics Tab Styles                              */
+/* ======================================================= */
+
+/* --- Tab Navigation --- */
+.tabs.is-boxed li.is-active a {
+  background-color: white;
+  border-bottom-color: transparent !important;
+}
+.tabs a {
+  transition: all 0.5s ease;
+}
+
+/* --- Tab Content Panels --- */
+.tab-pane {
+  display: none; /* Hide all panes by default */
+  padding: 2rem 0;
+  animation: fadeIn 0.9s ease-in-out;
+}
+.tab-pane.is-active {
+  display: block; /* Show only the active one */
+}
+
+/* --- Metric Content Styling --- */
+/* .metric-image {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(229, 128, 128, 0.08);
+  width: 100%;
+} */
+
+.metric-image {
+  display: block; /* 确保图片是块级元素，以便使用 margin: auto */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* 关键：设置最大宽度 */
+  width: 100%;          /* 响应式缩放，适应小屏幕 */
+  max-width: 430px;     
+  height: auto;         /* 保持图片的原始宽高比 */
+  
+  /* 确保图片在缩小窗口时也能正常缩放 */
+  width: 100%; 
+  
+  /* 保持图片样式 */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.metric-image-1 {
+  display: block; /* 确保图片是块级元素，以便使用 margin: auto */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* 关键：设置最大宽度 */
+  width: 100%;          /* 响应式缩放，适应小屏幕 */
+  max-width: 750px;     
+  height: auto;         /* 保持图片的原始宽高比 */
+  
+  /* 确保图片在缩小窗口时也能正常缩放 */
+  width: 100%; 
+  
+  /* 保持图片样式 */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.metric-description h4 {
+  margin-bottom: 1rem !important;
+}
+.metric-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+/* --- Formula Block --- */
+.formula {
+  background-color: #f5f5f5;
+  border: 0.8px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-top: 0.8rem;
+  overflow-x: auto; /* For small screens */
+}
+.formula pre {
+  background: none;
+  padding: 0;
+  white-space: pre-wrap; /* Allows wrapping if needed */
+  text-align: center;
+}
+.formula code {
+  font-family: 'Latin Modern Math', 'Cambria Math', 'STIX Two Math', serif;
+  font-size: 1.25rem;
+  color: #363636;
+}
+
+/* --- Utility for Centering Block Elements (Robust Flexbox Version) --- */
+.image-container-centered {
+  /* Use Flexbox to achieve perfect centering */
+  display: flex;
+  justify-content: center; /* This is the key property */
+  
+  /* Add some vertical space if needed */
+  margin-bottom: 1rem; 
+}
+
+/* Optional: It's good practice to ensure the image itself doesn't cause issues */
+
+/* --- Simple Fade-in Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ======================================================= */
+/* Subtle Underline Tab Style (Simple, Elegant, Beautiful) */
+/* ======================================================= */
+
+/* --- 1. Reset the main tab container --- */
+/* We only keep a single, light gray line at the bottom as a baseline */
+.tabs.is-boxed ul {
+  background-color: transparent;
+  border: none; /* Remove all default borders */
+  border-bottom: 1.5px solid #dbdbdb; /* A single, thin baseline */
+}
+
+/* --- 2. Style for ALL individual tabs --- */
+.tabs.is-boxed li a {
+  /* Reset all visual clutter */
+  border: none;
+  border-radius: 0 !important;
+  background-color: transparent;
+  
+  /* Typography and Spacing */
+  color: #c6c2c2; /* Muted color for non-active tabs */
+  font-weight: 500;
+  padding: 0.75em 1.25em; /* Generous padding for a clean look */
+  
+  /* This is a key trick: it makes the bottom border of the active tab align perfectly */
+  margin-bottom: -1px;
+  
+  /* Smooth transition for the hover effect */
+  transition: color 0.2s ease-in-out;
+}
+
+/* --- 3. The subtle hover effect --- */
+/* Only the text color changes, nothing else */
+.tabs.is-boxed li:not(.is-active) a:hover {
+  color: #efe9e3; /* Text becomes darker on hover */
+  background-color: transparent; /* Ensure no background appears */
+}
+
+/* --- 4. The clear and elegant ACTIVE state --- */
+.tabs.is-boxed li.is-active a {
+  color: #efe9e3 !important; /* Active text is dark and sharp */
+  font-weight: 600;
+  
+  /* The single, most important visual indicator: the underline */
+  /* It's slightly thicker and uses your theme's primary green color */
+  border-bottom: 2px solid #0BA360; 
+}
+
+
+/* ======================================================= */
+/* Feature Carousel Styles (Right Column)                  */
+/* ======================================================= */
+
+.feature-carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-images {
+  position: relative;
+  width: 100%;
+  /* Use aspect-ratio to prevent layout jump while images load */
+  aspect-ratio: 16 / 10; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or 'contain' if you want to see the whole image */
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-image.is-active {
+  opacity: 1;
+}
+
+/* --- Navigation Dots --- */
+.carousel-nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.carousel-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dbdbdb;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dot.is-active {
+  background-color: #0BA360; /* Your theme's green color */
+}
+
+/* --- Captions --- */
+.carousel-captions {
+  position: relative;
+  margin-top: 1rem;
+  min-height: 4em; /* Allocate space for 2-3 lines of text to prevent layout jump */
+  text-align: center;
+}
+
+.carousel-caption {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #7a7a7a;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  font-style: italic;
+}
+
+.carousel-caption.is-active {
+  opacity: 1;
+}
+
+
+
+/* --- Modern Causal Formula Style --- */
+.causal-formula-box {
+  background-color: var(--background-accent); /* Use a subtle theme background */
+  border-radius: var(--border-radius);       /* Consistent rounded corners */
+/* Accent line using primary color */
+  padding: .5rem 1rem;                      /* More generous padding for breathing room */
+  margin: .5rem 0;                          /* More vertical space around the box */
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);              /* Subtle shadow for depth */
+}
+
+.causal-formula-box pre {
+  background: none !important;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  white-space: normal; /* Allow wrapping for better responsiveness */
+}
+
+.causal-formula-box code {
+  color: var(--text-primary);
+  font-family: 'Latin Modern Math', 'Cambria Math', 'STIX Two Math', serif;
+  font-size: 1.2rem; /* Slightly larger font for readability */
+  line-height: 1.5;
+}
+
+
+
+/* ======================================================= */
+/* Modern Results Table Styles                             */
+/* ======================================================= */
+
+.results-table-container {
+  overflow-x: auto; /* Enables horizontal scrolling on small screens */
+  background: var(--background-primary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  margin-top: 2rem;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* A subtle hint for mobile users */
+.results-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+.results-table-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+.results-table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.results-table {
+  width: 100%;
+  min-width: 1200px; /* Force minimum width to trigger scroll, not wrap */
+  border-collapse: collapse; /* Clean, single borders */
+  font-size: 0.95rem;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.results-table thead th {
+  background-color: var(--background-accent);
+  font-weight: 600;
+  color: var(--text-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.results-table tbody tr:nth-child(even) {
+  background-color: var(--background-secondary); /* Zebra striping */
+}
+
+.results-table tbody tr:hover {
+  background-color: #e9f5ff; /* Subtle hover effect */
+}
+
+.results-table .model-name {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-primary);
+  position: sticky; /* Keep model names visible on horizontal scroll */
+  left: 0;
+  z-index: 2;
+}
+
+/* --- Group Headers (e.g., 'Closed-sourced LLMs') --- */
+.table-group-header {
+  /* 粘性定位现在由 .model-name 类负责，这里的 sticky 属性已移除 */
+  /* position: sticky; */
+  text-align: left !important;
+  background-color: var(--background-accent) !important;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--text-secondary);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* --- Highlight Styles for Scores --- */
+.results-table .is-best {
+  font-weight: 700 !important;
+  color: #16a34a !important; /* A vibrant green, !important ensures it always applies */
+  position: relative;
+}
+
+.results-table .is-second-best {
+  font-weight: 600 !important;
+  color: var(--primary-color) !important; /* !important ensures it always applies */
+  border-bottom: 2px solid var(--primary-hover);
+  padding-bottom: 0.25em;
+  display: inline-block;
+  line-height: 1;
+}
+
+.table-caption {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Give the sticky header a solid background and higher z-index */
+.results-table thead th.model-name {
+  background-color: var(--background-accent);
+  z-index: 12; /* Ensures it's above other sticky headers */
+}
+
+/* Give the sticky cells in ODD rows a solid background */
+.results-table tbody td.model-name {
+  background-color: var(--background-primary); /* Your site's main background */
+}
+
+/* Give the sticky cells in EVEN (zebra) rows a solid background */
+.results-table tbody tr:nth-child(even) td.model-name {
+  background-color: var(--background-secondary); /* Your site's zebra-stripe color */
+}
+
+/* Ensure the sticky cell's background changes on HOVER to match the row */
+.results-table tbody tr:hover td.model-name {
+  background-color: #e9f5ff; /* The row's hover color */
+}
+
+.results-table .model-name strong,
+.results-table .model-name span {
+  background-color: inherit;
+}
+
+
+
+
+/* ======================================================= */
+/* Visual Analysis Carousel & Section Footer Styles        */
+/* ======================================================= */
+
+/* Style for the carousel navigation arrows */
+.carousel .slider-arrow .icon {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.carousel .slider-arrow:hover .icon {
+  color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+/* Style for the final note at the bottom of the section */
+.section-footer-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.carousel-slide-box {
+  background-color: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); /* Larger radius for a softer look */
+  padding: 2.5rem; /* Generous padding inside the card */
+  box-shadow: var(--shadow-md);
+  margin: 0.5rem; /* A small margin to prevent touching carousel edges */
+}
+
+/* On mobile, reduce the padding to save space */
+@media screen and (max-width: 768px) {
+  .carousel-slide-box {
+    padding: 1.2rem;
+  }
+}
+
+/* =================================================================== */
+/* Adaptive Vertical Section (FINAL - Desktop & Mobile Optimized)    */
+/* =================================================================== */
+
+/* --- 1. Base Styles for the Content Boxes --- */
+/* These styles apply to all screen sizes. */
+.vertical-slide {
+  /* We use padding to create space instead of a fixed height. */
+  padding: 2rem 1rem;
+}
+
+.vertical-slide .carousel-slide-box {
+  width: 100%;
+  max-width: 1100px;
+  /* margin: auto is a robust way to center the box. */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* --- 2. Mobile & Tablet: The "Scroll Snap" Experience --- */
+/* This block targets screens UP TO 1023px wide (tablets and phones). */
+@media screen and (max-width: 1023px) {
+
+  /* A. Activate the scroll container */
+  .vertical-scroll-container {
+    height: 90vh; /* Use a slightly taller viewport on mobile */
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* IMPORTANT: Scroll snapping is ONLY enabled here. */
+    scroll-snap-type: y mandatory;
+  }
+  .vertical-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* B. Make each slide a full-screen snap target */
+  .vertical-slide {
+    min-height: 90vh; /* Each slide must fill the container */
+    height: auto;
+    scroll-snap-align: start;
+    
+    /* Use flexbox to center content vertically within the tall slide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* C. Add the scroll-down arrow hint for touch devices */
+  .vertical-slide:first-child {
+    position: relative;
+  }
+  .vertical-slide:first-child::after {
+    content: '↓';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--text-light);
+    animation: bounce 2s infinite;
+    opacity: 0.8;
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-15px); }
+    60% { transform: translateX(-50%) translateY(-8px); }
+  }
+}
+
+
+/* --- 3. Desktop: A Natural, Free-Scrolling Layout --- */
+/* This block targets screens 1024px and WIDER. */
+@media screen and (min-width: 1024px) {
+
+  /* --- 1. 缩小【标题】与【第一个框】的距离 --- */
+  
+  /* a) 减小包裹标题的 .hero-body 的下内边距 */
+  .hero.is-light > .hero-body:first-child {
+    padding-bottom: 2.5rem; /* 原为 4rem，大幅缩小 */
+  }
+
+  /* b) 确保标题本身的下外边距不会过大 */
+  .hero.is-light .title.is-3 {
+    margin-bottom: 2rem !important; /* 保持一个合理的标题间距 */
+  }
+
+
+  /* --- 2. 缩小【两个框之间】的距离 --- */
+  
+  /* a) 移除外层容器的多余内边距 */
+  .vertical-slide {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  /* b) 设置两个卡片之间的外边距 */
+  .vertical-slide:not(:last-child) {
+    margin-bottom: 1.5rem; 
+  }
+
+
+  /* --- 3. 缩小【最后一个框】与【结尾文字】的距离 --- */
+
+  /* a) 移除包裹结尾文字的 .hero-body 的上内边距 */
+  .hero.is-light > .hero-body:last-child {
+    padding-top: 0; /* 关键：完全移除顶部的巨大间距 */
+  }
+}

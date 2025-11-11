@@ -23,7 +23,7 @@
   <a>Zhengtong Zhang<sup>2</sup></a>&emsp;
   <a>Depei Liu<sup>1</sup></a>&emsp;
   <a>Shiyuan Luo<sup>2</sup></a>&emsp;
-  <a> Junfei Liu<sup>1,†</sup></a>
+  <a>Junfei Liu<sup>1,†</sup></a>
   <div>
     <br/>
     <p>
