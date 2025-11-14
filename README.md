@@ -6,8 +6,8 @@
     </picture>
   <br/>
   <p>
-    <!-- <a href="?"><img alt="Website" src="https://img.shields.io/badge/🌐_Project-Website-A593C2?style=flat-square&labelColor=8A7AA8"></a> -->
-    <!-- <a href="?"><img alt="Paper" src="https://img.shields.io/badge/📄_arXiv-Paper-C7969C?style=flat-square&labelColor=A8798A"></a> -->
+    <a href="https://ruochoxio.github.io/ETrajEval/"><img alt="Website" src="https://img.shields.io/badge/🌐_Project-Website-A593C2?style=flat-square&labelColor=8A7AA8"></a>
+    <a href="https://arxiv.org/abs/2511.09003"><img alt="Paper" src="https://img.shields.io/badge/📄_arXiv-Paper-C7969C?style=flat-square&labelColor=A8798A"></a>
     <a href="https://pypi.org/project/rewardanything/"><img alt="Apache" src="https://img.shields.io/badge/⚖️License-Apache_2.0-7B9BB3?style=flat-square"></a>
     </p>
 
@@ -196,18 +196,22 @@ Easily integrate new models by adding a definition in `config.yaml`:
       generation_params: { ... }
     ```
 
-<!-- ## 📄 Citation
+## 📄 Citation
 
 If you use ETrajEval in your research, please cite our paper:
 
 ```bibtex
-@article{anonymous2025et,
-  title={Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models},
-  author={Anonymous},
-  journal={Details to be updated upon publication},
-  year={2025}
+@article{tan2025detectingemotionaldynamictrajectories,
+      title={Detecting Emotional Dynamic Trajectories: An Evaluation Framework for Emotional Support in Language Models}, 
+      author={Zhouxing Tan and Ruochong Xiong and Yulong Wan and Jinlong Ma and Hanlin Xue and Qichun Deng and Haifeng Jing and Zhengtong Zhang and Depei Liu and Shiyuan Luo and Junfei Liu},
+      year={2025},
+      eprint={2511.09003},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      journal={ArXiv},
+      url={https://arxiv.org/abs/2511.09003}, 
 }
-``` -->
+```
 
 ## 🤝 Contributing
 
